@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4efe6">
+  <meta name="description" content="Musty ile gerçek indirimleri yakala, kırmızı tuzaklardan kaç; 360° stüdyoda dolaş ve Çarşı'nın sesini aç.">
+  <title>Musty Playground · Çarşı</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ef302f'/%3E%3Cpath d='M12 46V17h10l10 15 10-15h10v29H41V32L32 45 23 32v14z' fill='%23fffaf1'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/game.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Musty Playground, sayfa başına dön">
+        <span class="brand-mark" aria-hidden="true">m!</span>
+        <span class="brand-name">musty<span>PLAYGROUND</span></span>
+        <span class="brand-carsi">ÇARŞI</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle-lines" aria-hidden="true"><i></i><i></i></span>
+        <span>MENÜ</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Ana menü">
+        <a href="#oyun">Oyun</a>
+        <a href="#studyo">360° Stüdyo</a>
+        <a href="#mimikler">Mimikler</a>
+        <a href="#sesler">Ses tahtası</a>
+      </nav>
+
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false" aria-label="Sesi kapat">
+        <svg class="sound-icon sound-icon-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.2-1.8a6.8 6.8 0 0 1 0 9.6M18.8 4.6a10.4 10.4 0 0 1 0 14.8"/></svg>
+        <svg class="sound-icon sound-icon-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12 1 5 5m0-5-5 5"/></svg>
+        <span id="sound-toggle-label">SES AÇIK</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-deco hero-deco-percent" aria-hidden="true">%</div>
+      <div class="hero-deco hero-deco-star" aria-hidden="true">★</div>
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span></span> MUSTY PLAYGROUND SUNAR</p>
+          <h1 id="hero-title"><span>MUSTY</span><span class="hero-title-accent">ÇARŞIDA!</span></h1>
+          <p class="hero-lead">İndirim yağıyor. <strong>Gerçeği kap, tuzağa yakalanma.</strong> Musty’nin en renkli hâliyle Çarşı seni bekliyor.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#oyun">Oyuna Gir <span aria-hidden="true">↘</span></a>
+            <a class="button button-secondary" href="#studyo">360° Stüdyo <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-footnote"><span aria-hidden="true">✦</span> ÜYE YOK. PAZARLIK YOK. SADECE OYNA.</div>
+        </div>
+
+        <div class="hero-visual" data-reveal style="--reveal-delay: 120ms">
+          <div class="hero-poster">
+            <div class="poster-arch" aria-hidden="true"></div>
+            <p class="poster-note" aria-hidden="true">ÇARŞI’NIN<br>RESMÎ<br>GÖZCÜSÜ</p>
+            <div class="poster-burst" aria-hidden="true"></div>
+            <img class="hero-character" src="assets/sprites/front.png" width="700" height="937" alt="Mavi gömlekli, beyaz pantolonlu Musty" fetchpriority="high" decoding="async">
+            <div class="sale-sticker" aria-label="Yüzde elli indirim"><strong>%50</strong><span>İNDİRİM</span></div>
+            <div class="poster-tape" aria-hidden="true">GERÇEK İNDİRİMİN PEŞİNDE ★</div>
+          </div>
+          <p class="hero-caption"><span>01</span> Musty iş başında. Sen de gel.</p>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>İNDİRİM YAĞIYOR</span><i>★</i><span>ÇARŞI</span><i>★</i><span>SİYAH = GERÇEK</span><i>★</i><span>KIRMIZI = TUZAK</span><i>★</i>
+          <span>İNDİRİM YAĞIYOR</span><i>★</i><span>ÇARŞI</span><i>★</i><span>SİYAH = GERÇEK</span><i>★</i><span>KIRMIZI = TUZAK</span><i>★</i>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-section" id="oyun" aria-labelledby="game-title">
+      <div class="container">
+        <div class="section-heading section-heading-light" data-reveal>
+          <p class="section-kicker"><span>01</span> OYUN</p>
+          <div class="section-heading-row">
+            <h2 id="game-title">İNDİRİM<br><em>YAĞMURU</em></h2>
+            <p>Gökten fırsat yağıyor. <strong>Siyah etiketleri topla, kırmızı tuzaklardan sıyrıl</strong> ve kombo ile skorunu uçur.</p>
+          </div>
+        </div>
+
+        <div class="arcade-layout">
+          <div class="arcade-cabinet" data-reveal>
+            <div class="cabinet-marquee" aria-hidden="true">
+              <span>MUSTY</span>
+              <strong>İNDİRİM YAĞMURU</strong>
+              <div class="cabinet-lights"><i></i><i></i><i></i></div>
+            </div>
+            <div class="cabinet-screen">
+              <div id="game-root"></div>
+            </div>
+            <div class="cabinet-controls" aria-hidden="true">
+              <span>← → &nbsp; / &nbsp; A D</span>
+              <strong>HAREKET ET · TOPLA · KAÇ</strong>
+              <i></i>
+            </div>
+          </div>
+
+          <aside class="game-rules" aria-labelledby="rules-title" data-reveal style="--reveal-delay: 100ms">
+            <p class="rules-overline">CEBİNDE KALACAK TEK REHBER</p>
+            <h3 id="rules-title">ÇARŞININ<br>KURALLARI</h3>
+            <ol>
+              <li><span class="rule-symbol rule-symbol-black" aria-hidden="true">%</span><div><strong>SİYAH = GERÇEK</strong><p>Yakala, puanı ve komboyu büyüt.</p></div></li>
+              <li><span class="rule-symbol rule-symbol-red" aria-hidden="true">!</span><div><strong>KIRMIZI = TUZAK</strong><p>Üzerindeki kadar canını götürür.</p></div></li>
+              <li><span class="rule-symbol rule-symbol-arrow" aria-hidden="true">↔</span><div><strong>SAĞA SOLA KIVRIL</strong><p>Oklar, A / D ya da parmağınla oyna.</p></div></li>
+            </ol>
+            <div class="rules-sticker">HER 12 SANİYEDE<br><strong>DAHA HIZLI!</strong></div>
+            <p class="rules-small">En iyi skorun bu cihazda saklanır. Oyunu duraklatmak için <kbd>P</kbd> veya <kbd>Esc</kbd>.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio-section" id="studyo" aria-labelledby="studio-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker"><span>02</span> 360° STÜDYO</p>
+          <div class="section-heading-row">
+            <h2 id="studio-title">HER AÇIDAN<br><em>MUSTY.</em></h2>
+            <p>Bir tur at, kıyafeti değiştir, en sevdiğin açıyı yakala. <strong>Musty burada kameraya oynar.</strong></p>
+          </div>
+        </div>
+
+        <div class="studio-layout" id="studio-app">
+          <div class="studio-stage-shell" data-reveal>
+            <div class="studio-stage-top"><span>CANLI MANKEN</span><span>360° / 08 KARE</span></div>
+            <div class="studio-stage" id="studio-stage" role="slider" tabindex="0" aria-label="Musty’nin dönüş açısı" aria-valuemin="0" aria-valuemax="315" aria-valuenow="0" aria-valuetext="Ön, 0 derece">
+              <img id="studio-image" src="assets/turn/a000.jpg" width="1200" height="1600" alt="Mavi kıyafetli Musty, önden görünüm" loading="lazy" decoding="async" draggable="false">
+              <span class="studio-drag-hint" aria-hidden="true">← &nbsp; SÜRÜKLE &nbsp; →</span>
+              <span class="studio-frame-count" aria-hidden="true"><b id="studio-frame-number">01</b> / 08</span>
+            </div>
+            <div class="studio-angle-dots" aria-hidden="true">
+              <i class="is-active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <div class="studio-controls" data-reveal style="--reveal-delay: 100ms">
+            <div class="studio-control-block">
+              <p class="control-label"><span>01</span> KIYAFETİ SEÇ</p>
+              <div class="outfit-chips" role="group" aria-label="Musty’nin kıyafeti">
+                <button class="outfit-chip is-active" type="button" data-outfit="a" aria-pressed="true"><i class="dot-blue" aria-hidden="true"></i>Mavi</button>
+                <button class="outfit-chip" type="button" data-outfit="carsi" aria-pressed="false"><i class="dot-carsi" aria-hidden="true"></i>Çarşı</button>
+                <button class="outfit-chip" type="button" data-outfit="kirmizi" aria-pressed="false"><i class="dot-red" aria-hidden="true"></i>Kırmızı</button>
+                <button class="outfit-chip" type="button" data-outfit="sari" aria-pressed="false"><i class="dot-yellow" aria-hidden="true"></i>Sarı</button>
+              </div>
+            </div>
+
+            <div class="studio-control-block">
+              <p class="control-label"><span>02</span> AÇIYI BELİRLE</p>
+              <div class="studio-angle-readout">
+                <div><strong id="studio-angle">0°</strong><span id="studio-angle-name">ÖN</span></div>
+                <span class="studio-live"><i></i> HAZIR</span>
+              </div>
+              <div class="studio-button-row">
+                <button class="small-button" id="studio-front" type="button">Ön</button>
+                <button class="small-button" id="studio-back" type="button">Arka</button>
+                <button class="small-button" id="studio-auto" type="button" aria-pressed="false"><span class="auto-icon" aria-hidden="true">↻</span><span id="studio-auto-label">Otomatik döndür</span></button>
+              </div>
+            </div>
+
+            <button class="button button-download" id="studio-download" type="button">PNG indir <span aria-hidden="true">↓</span></button>
+            <p class="studio-help" id="studio-help">Görseli sürükle veya sol / sağ ok tuşlarını kullan.</p>
+            <p class="sr-only" id="studio-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expressions-section" id="mimikler" aria-labelledby="expressions-title">
+      <div class="container">
+        <div class="section-heading expressions-heading" data-reveal>
+          <p class="section-kicker"><span>03</span> MİMİK DOSYASI</p>
+          <div class="section-heading-row">
+            <h2 id="expressions-title">BİR BAKIŞ,<br><em>BİN LAF.</em></h2>
+            <p>Musty’nin üç hâli, üç ayrı Çarşı hikâyesi. <strong>Bir karta dokun; büyüsün, konuşsun.</strong></p>
+          </div>
+        </div>
+
+        <div class="expression-grid">
+          <article class="expression-card" data-reveal>
+            <button class="expression-trigger" type="button" data-image="assets/face-wink.webp" data-title="Göz kırpınca iş tamam." data-caption="Musty %50’lik gerçek indirimi gördü. Gerisini yüzü anlatıyor." aria-label="Göz kırpan Musty’yi büyüt ve seslendir">
+              <span class="expression-image"><img src="assets/face-wink.webp" width="1328" height="1760" alt="Göz kırpıp dil çıkaran Musty" loading="lazy" decoding="async"></span>
+              <span class="expression-copy"><span class="expression-number">MİMİK / 01</span><strong>GÖZ KIRPINCA<br>İŞ TAMAM.</strong><span class="expression-tag">FAVORİ: %50</span><span class="expression-open">BÜYÜT + SESLENDİR <b aria-hidden="true">↗</b></span></span>
+            </button>
+          </article>
+
+          <article class="expression-card" data-reveal style="--reveal-delay: 90ms">
+            <button class="expression-trigger" type="button" data-image="assets/face-cute.webp" data-title="Kırmaz mıyız şimdi bunu?" data-caption="Pazarlık modu açıldı. O bakışla bütün Çarşı bir kez daha düşünür." aria-label="Sevimli Musty’yi büyüt ve seslendir">
+              <span class="expression-image"><img src="assets/face-cute.webp" width="1328" height="1760" alt="Sevimli bir ifadeyle bakan Musty" loading="lazy" decoding="async"></span>
+              <span class="expression-copy"><span class="expression-number">MİMİK / 02</span><strong>KIRMAZ MIYIZ<br>ŞİMDİ BUNU?</strong><span class="expression-tag">PAZARLIK MODU</span><span class="expression-open">BÜYÜT + SESLENDİR <b aria-hidden="true">↗</b></span></span>
+            </button>
+          </article>
+
+          <article class="expression-card" data-reveal style="--reveal-delay: 180ms">
+            <button class="expression-trigger" type="button" data-image="assets/face-surprised.webp" data-title="%50’yi görünce ben." data-caption="Oley beee! Etiket doğru, indirim gerçek, mimik tamamen kontrolsüz." aria-label="Şaşıran Musty’yi büyüt ve seslendir">
+              <span class="expression-image"><img src="assets/face-surprised.webp" width="1328" height="1760" alt="İndirime şaşıran Musty" loading="lazy" decoding="async"></span>
+              <span class="expression-copy"><span class="expression-number">MİMİK / 03</span><strong>%50’Yİ GÖRÜNCE<br>TAM OLARAK BEN.</strong><span class="expression-tag">OLEY BEEE!</span><span class="expression-open">BÜYÜT + SESLENDİR <b aria-hidden="true">↗</b></span></span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soundboard-section" id="sesler" aria-labelledby="soundboard-title">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker"><span>04</span> SES TAHTASI</p>
+          <div class="section-heading-row">
+            <h2 id="soundboard-title">MUSTY<br><em>KONUŞSUN.</em></h2>
+            <p>Oley’sinden “amanın”ına, bütün repertuvar burada. <strong>Bir düğmeye bas ve Çarşı’nın sesini aç.</strong></p>
+          </div>
+        </div>
+        <div class="soundboard-note" data-reveal><span aria-hidden="true">♪</span> Ses tahtasındaki düğmeler, tıkladığında sessiz modda bile bir kez çalar.</div>
+        <div class="soundboard-grid" id="soundboard-grid" data-reveal></div>
+        <noscript><p class="noscript-note">Ses tahtasını kullanmak için JavaScript’i etkinleştir.</p></noscript>
+        <p class="sr-only" id="soundboard-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main" data-reveal>
+        <div><p class="footer-kicker">ÇARŞI NOTU / 001</p><h2>İNDİRİMLER OYUN,<br><span>EĞLENCE GERÇEK.</span></h2></div>
+        <a class="made-sticker" href="#top"><span>BU SİTEYİ</span><strong>MUSTY<br>YAPTI</strong><i aria-hidden="true">★</i></a>
+      </div>
+      <div class="footer-bottom">
+        <a class="footer-brand" href="#top">musty<span>®</span></a>
+        <p>Musty Playground · Çarşı<br><span>© <span id="current-year">2026</span> — Bol kahkaha, bol indirim.</span></p>
+        <a class="back-to-top" href="#top">YUKARI DÖN <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="face-lightbox" id="face-lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-inner">
+      <form method="dialog"><button class="lightbox-close" type="submit" aria-label="Büyük görseli kapat">×</button></form>
+      <div class="lightbox-image-wrap"><img id="lightbox-image" alt="" width="1328" height="1760" loading="lazy" decoding="async"></div>
+      <div class="lightbox-copy">
+        <p class="lightbox-kicker">MUSTY’NİN MİMİK DOSYASI</p>
+        <h2 id="lightbox-title"></h2>
+        <p id="lightbox-caption"></p>
+        <blockquote id="lightbox-line"></blockquote>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
